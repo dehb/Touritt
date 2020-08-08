@@ -8,11 +8,16 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.dehb.tourit.R
+import kotlinx.android.synthetic.main.fragment_category.view.*
+import kotlinx.android.synthetic.main.fragment_search.view.*
 
 class SearchFragment : Fragment() {
 
     private lateinit var notificationsViewModel: SearchViewModel
+    private lateinit var layoutManager: RecyclerView.LayoutManager
 
     override fun onCreateView(
             inflater: LayoutInflater,
@@ -22,10 +27,17 @@ class SearchFragment : Fragment() {
         notificationsViewModel =
                 ViewModelProviders.of(this).get(SearchViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_search, container, false)
-        val textView: TextView = root.findViewById(R.id.text_notifications)
+
+        setUpSearchView(root.search_recycler)
+//        val textView: TextView = root.findViewById(R.id.text_notifications)
         notificationsViewModel.text.observe(viewLifecycleOwner, Observer {
-            textView.text = it
+//            textView.text = it
         })
         return root
+    }
+
+    private fun setUpSearchView(searchRecycler: RecyclerView) {
+        layoutManager = LinearLayoutManager(context)
+//        adapter =
     }
 }
