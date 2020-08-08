@@ -1,4 +1,4 @@
-package com.dehb.tourit.ui.notifications
+package com.dehb.tourit.ui.category
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,20 +10,20 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.dehb.tourit.R
 
-class NotificationsFragment : Fragment() {
+class CategoryFragment : Fragment() {
 
-    private lateinit var notificationsViewModel: NotificationsViewModel
+    private lateinit var categoryViewModel: CategoryViewModel
 
     override fun onCreateView(
             inflater: LayoutInflater,
             container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
-        notificationsViewModel =
-                ViewModelProviders.of(this).get(NotificationsViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_notifications, container, false)
-        val textView: TextView = root.findViewById(R.id.text_notifications)
-        notificationsViewModel.text.observe(viewLifecycleOwner, Observer {
+        categoryViewModel =
+                ViewModelProviders.of(this).get(CategoryViewModel::class.java)
+        val root = inflater.inflate(R.layout.fragment_category, container, false)
+        val textView: TextView = root.findViewById(R.id.text_category)
+        categoryViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
         })
         return root
