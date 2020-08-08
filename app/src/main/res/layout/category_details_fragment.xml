@@ -5,9 +5,10 @@
     android:layout_height="match_parent"
     tools:context=".CategoryDetailsFragment">
 
-    <TextView
+    <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Hello" />
+        android:padding="8dp"
+        android:id="@+id/category_details_recycler"/>
 
 </FrameLayout>
