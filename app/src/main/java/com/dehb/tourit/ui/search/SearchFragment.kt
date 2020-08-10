@@ -18,6 +18,7 @@ class SearchFragment : Fragment() {
 
     private lateinit var notificationsViewModel: SearchViewModel
     private lateinit var layoutManager: RecyclerView.LayoutManager
+    private lateinit var adapter: SearchAdapter
 
     override fun onCreateView(
             inflater: LayoutInflater,
@@ -38,6 +39,6 @@ class SearchFragment : Fragment() {
 
     private fun setUpSearchView(searchRecycler: RecyclerView) {
         layoutManager = LinearLayoutManager(context)
-//        adapter =
+        adapter = SearchAdapter()
     }
 }

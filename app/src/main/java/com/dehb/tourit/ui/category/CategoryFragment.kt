@@ -1,5 +1,6 @@
 package com.dehb.tourit.ui.category
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -18,6 +19,7 @@ class CategoryFragment : Fragment() {
 
     private lateinit var categoryViewModel: CategoryViewModel
     private lateinit var layoutManager: RecyclerView.LayoutManager
+    private lateinit var adapter: CategoryAdapter
 
     override fun onCreateView(
             inflater: LayoutInflater,
@@ -37,6 +39,6 @@ class CategoryFragment : Fragment() {
 
     private fun setUpCategoryView(categoryRecycler: RecyclerView) {
         layoutManager = GridLayoutManager(context, 2)
-//        adapter =
+        adapter = CategoryAdapter()
     }
 }
