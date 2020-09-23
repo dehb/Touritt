@@ -21,6 +21,6 @@ class CategoryAdapter(): RecyclerView.Adapter<CategoryAdapter.ViewHolder> () {
     override fun getItemCount(): Int= 10
 
     override fun onBindViewHolder(holder: CategoryAdapter.ViewHolder, position: Int) {
-        TODO("Not yet implemented")
+
     }
 }

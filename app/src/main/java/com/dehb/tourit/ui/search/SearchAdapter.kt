@@ -21,6 +21,6 @@ class SearchAdapter: RecyclerView.Adapter<SearchAdapter.ViewHolder> () {
     override fun getItemCount(): Int =10
 
     override fun onBindViewHolder(holder: SearchAdapter.ViewHolder, position: Int) {
-        TODO("Not yet implemented")
+
     }
 }

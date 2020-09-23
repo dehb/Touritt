@@ -7,16 +7,18 @@
     android:orientation="vertical"
     tools:context=".ui.category.CategoryFragment">
 
-    <TextView
-        android:id="@+id/text_category"
+    <EditText
+        android:id="@+id/search"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="20sp"
-        />
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name" />
 
 <androidx.recyclerview.widget.RecyclerView
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:padding="8dp"
     android:id="@+id/category_recycler"/>
+
 </LinearLayout>
