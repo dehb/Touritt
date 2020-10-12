@@ -8,8 +8,12 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+<<<<<<< HEAD
         android:theme="@style/AppTheme"
         >
+=======
+        android:theme="@style/AppTheme">
+>>>>>>> fe80b660d89f3caf687ffd640f210a0d202ff3ec
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name">

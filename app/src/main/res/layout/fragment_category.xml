@@ -2,7 +2,10 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+<<<<<<< HEAD
     android:id="@+id/fragment_category"
+=======
+>>>>>>> fe80b660d89f3caf687ffd640f210a0d202ff3ec
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -15,11 +18,14 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Name" />
+<<<<<<< HEAD
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="fetch"
         android:id="@+id/fetch"/>
+=======
+>>>>>>> fe80b660d89f3caf687ffd640f210a0d202ff3ec
 
 <androidx.recyclerview.widget.RecyclerView
     android:layout_width="match_parent"
