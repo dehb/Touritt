@@ -11,11 +11,7 @@
         android:layout_height="wrap_content"
         app:cardCornerRadius="50dp">
     <ImageView
-<<<<<<< HEAD
         android:id="@+id/category_Image"
-=======
-        android:id="@+id/profile_image"
->>>>>>> fe80b660d89f3caf687ffd640f210a0d202ff3ec
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_gravity="center"
@@ -24,10 +20,7 @@
     </androidx.cardview.widget.CardView>
     <TextView
         android:layout_width="wrap_content"
-<<<<<<< HEAD
         android:id="@+id/category_Name"
-=======
->>>>>>> fe80b660d89f3caf687ffd640f210a0d202ff3ec
         android:layout_height="wrap_content"
         android:text="Name"
         android:layout_gravity="center_horizontal"/>

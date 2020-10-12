@@ -2,28 +2,20 @@ package com.dehb.tourit.ui.category
 
 import android.content.Context
 import android.os.Bundle
-<<<<<<< HEAD
 import android.util.Log
-=======
->>>>>>> fe80b660d89f3caf687ffd640f210a0d202ff3ec
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-<<<<<<< HEAD
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-=======
-import androidx.fragment.app.Fragment
->>>>>>> fe80b660d89f3caf687ffd640f210a0d202ff3ec
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.dehb.tourit.CategoryDetailsViewModel
-<<<<<<< HEAD
 import com.dehb.tourit.CategoryModele
 import com.dehb.tourit.R
 import com.google.firebase.database.DataSnapshot
@@ -44,25 +36,13 @@ class CategoryFragment : Fragment() {
     val cats = ArrayList<String>()
     val database = FirebaseDatabase.getInstance()
        val myRefCat = database.getReference("Category")
-=======
-import com.dehb.tourit.R
-import kotlinx.android.synthetic.main.fragment_category.*
-import kotlinx.android.synthetic.main.fragment_category.view.*
-import kotlinx.android.synthetic.main.fragment_category.view.category_recycler
 
-class CategoryFragment : Fragment() {
-
-    private lateinit var categoryViewModel: CategoryViewModel
-//    private lateinit var layoutManager: RecyclerView.LayoutManager
-//    private lateinit var adapter: CategoryAdapter
->>>>>>> fe80b660d89f3caf687ffd640f210a0d202ff3ec
 
     override fun onCreateView(
             inflater: LayoutInflater,
             container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
-<<<<<<< HEAD
         val root = inflater.inflate(R.layout.fragment_category, container, false)
         fromFirebase()
                 categoryViewModel.text.observe(viewLifecycleOwner, Observer {
@@ -80,23 +60,7 @@ class CategoryFragment : Fragment() {
 //        root.fetch.setOnClickListener {
 //            fromFirebase()
 //        }
-
-
-
-
-=======
-
-        val root = inflater.inflate(R.layout.fragment_category, container, false)
-
-//        category_recycler.layoutManager = LinearLayoutManager(context)
-//        category_recycler.adapter = CategoryAdapter()
-        setUpCategoryView(root.category_recycler)
-
-//        categoryViewModel.text.observe(viewLifecycleOwner, Observer {
-//            textView.text = it
-//        })
->>>>>>> fe80b660d89f3caf687ffd640f210a0d202ff3ec
-        return root
+    return root
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
