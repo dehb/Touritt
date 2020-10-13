@@ -27,12 +27,8 @@ class HomeFragment : Fragment() {
 //    private lateinit var layoutManager: RecyclerView.LayoutManager
 val database = FirebaseDatabase.getInstance()
     val myRef = database.getReference("message")
-<<<<<<< HEAD
     val myRefData = database.getReference("Data")
     val myRefCat = database.getReference("Category")
-=======
-    val myRefD = database.getReference("Data")
->>>>>>> fe80b660d89f3caf687ffd640f210a0d202ff3ec
 
     override fun onCreateView(
             inflater: LayoutInflater,
@@ -57,43 +53,16 @@ val database = FirebaseDatabase.getInstance()
     }
 
     private fun fromFirebase() {
-<<<<<<< HEAD
-        myRefCat.addListenerForSingleValueEvent(object : ValueEventListener {
-
-            override fun onDataChange(dataSnapshot: DataSnapshot) {
-                val categories = dataSnapshot.children
-                categories.forEach {
-                    val Cats = it.value
-
-                    Log.i("FromFirebaseCat", Cats.toString())
-                }
-
-            }
-
-            override fun onCancelled(databaseError: DatabaseError) {
-                Toast.makeText(requireContext(), "Error fetching data", Toast.LENGTH_LONG)
-                    .show()
-            }
-        })
-
-        val postListener = object : ValueEventListener {
-            override fun onDataChange(dataSnapshot: DataSnapshot) {
-//                Log.i("FromFirebase", dataSnapshot.toString())
-
-                    val place = dataSnapshot.children
-                place.forEach { Log.i("FromFirebasedes", it.child("Description").value.toString()
-
-                ) }
-
-=======
-//        myRefD.addListenerForSingleValueEvent(object : ValueEventListener {
+//         myRefCat.addListenerForSingleValueEvent(object : ValueEventListener {
 //
 //            override fun onDataChange(dataSnapshot: DataSnapshot) {
-//                val value = dataSnapshot.getValue(Site::class.java)
-//               Log.i("FromFirebase", value!!.toString())
+//                val categories = dataSnapshot.children
+//                categories.forEach {
+//                    val Cats = it.value
+//                    Log.i("FromFirebaseCat", Cats.toString())
+//                }
 //            }
-//
-//            override fun onCancelled(databaseError: DatabaseError) {
+//             override fun onCancelled(databaseError: DatabaseError) {
 //                Toast.makeText(requireContext(), "Error fetching data", Toast.LENGTH_LONG)
 //                    .show()
 //            }
@@ -101,25 +70,33 @@ val database = FirebaseDatabase.getInstance()
 
         val postListener = object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
-                val place = dataSnapshot.getValue()
-                Log.i("FromFirebase", place!!.toString())
+//                Log.i("FromFirebase", dataSnapshot.toString())
+                val place = dataSnapshot.children
+                place.forEach {
+                    Log.i(
+                        "FromFirebasedes", it.child("Description").value.toString()
+                    )
+                }
+            }
+
+//                val postListener = object : ValueEventListener {
+//                    override fun onDataChange(dataSnapshot: DataSnapshot) {
+//                        val place = dataSnapshot.getValue()
+//                        Log.i("FromFirebase", place!!.toString())
 
 //                val places = dataSnapshot.getValue().forEach()
 //              val value = dataSnapshot.getValue(Site::class.java)
 //               Log.i("FromFirebaseee", value!!.toString())
->>>>>>> fe80b660d89f3caf687ffd640f210a0d202ff3ec
-            }
+//                    }
+
             override fun onCancelled(databaseError: DatabaseError) {
-               Toast.makeText(requireContext(), "Error fetching data", Toast.LENGTH_LONG)
+                Toast.makeText(requireContext(), "Error fetching data", Toast.LENGTH_LONG)
                     .show()
             }
         }
-<<<<<<< HEAD
-        myRefData.addValueEventListener(postListener)
-=======
-        myRefD.addValueEventListener(postListener)
->>>>>>> fe80b660d89f3caf687ffd640f210a0d202ff3ec
-    }
+                myRefData.addValueEventListener(postListener)
+
+        }
 
     private fun toFirebase() {
                 myRef.setValue("Hello World!! Im Rival :)")

@@ -30,56 +30,63 @@ import kotlinx.android.synthetic.main.fragment_home.view.*
 
 class CategoryFragment : Fragment() {
 
-//    private lateinit var categoryViewModel: CategoryViewModel
+    //    private lateinit var categoryViewModel: CategoryViewModel
     val categoryViewModel: CategoryViewModel by activityViewModels()
-//    private lateinit var cats: ArrayList<Any>
+
+    //    private lateinit var cats: ArrayList<Any>
     val cats = ArrayList<String>()
     val database = FirebaseDatabase.getInstance()
-       val myRefCat = database.getReference("Category")
+    val myRefCat = database.getReference("Category")
 
 
     override fun onCreateView(
-            inflater: LayoutInflater,
-            container: ViewGroup?,
-            savedInstanceState: Bundle?
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
     ): View? {
         val root = inflater.inflate(R.layout.fragment_category, container, false)
         fromFirebase()
-                categoryViewModel.text.observe(viewLifecycleOwner, Observer {
+        categoryViewModel.text.observe(viewLifecycleOwner, Observer {
 
 
-                    if (cats.isNullOrEmpty()){
-                        Log.i("FromFirebasefunc", cats.toString())
-                        root.fragment_category.addView(View.inflate(context, R.layout.empty_response_view, null ))
-                    } else {
+            if (cats.isNullOrEmpty()) {
+                Log.i("FromFirebasefunc", cats.toString())
+                root.fragment_category.addView(
+                    View.inflate(
+                        context,
+                        R.layout.empty_response_view,
+                        null
+                    )
+                )
+            } else {
 
 //                        setUpCategoryView(root.category_recycler, cats)
-                    }
+            }
         })
 
 //        root.fetch.setOnClickListener {
 //            fromFirebase()
 //        }
-    return root
+        return root
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-<<<<<<< HEAD
 //        categoryViewModel =
 //            ViewModelProviders.of(this).get(CategoryViewModel::class.java)
         categoryViewModel.text
         // TODO: Use the ViewModel
     }
 
-//    private fun setUpCategoryView(view: RecyclerView) =with(view) {
+    //    private fun setUpCategoryView(view: RecyclerView) =with(view) {
 //        layoutManager = GridLayoutManager(context, 2)
 //        adapter = CategoryAdapter()
 //    }
-    private fun setUpCategoryView(view: RecyclerView, categoryData: ArrayList<CategoryModele>) =  with(view) {
-        layoutManager = GridLayoutManager(context, 2)
-        adapter = CategoryAdapter(categoryData,  R.layout.category_item)
-    }
+    private fun setUpCategoryView(view: RecyclerView, categoryData: ArrayList<CategoryModele>) =
+        with(view) {
+            layoutManager = GridLayoutManager(context, 2)
+            adapter = CategoryAdapter(categoryData, R.layout.category_item)
+        }
 
 
     private fun fromFirebase() {
@@ -87,10 +94,10 @@ class CategoryFragment : Fragment() {
 
             override fun onDataChange(dataSnapshot: DataSnapshot) {
 
-                for (e in dataSnapshot.children){
+                for (e in dataSnapshot.children) {
                     val categories: String = e.value.toString()
                     Log.i("FromFirebaseCategori", categories.toString())
-                   cats.add(categories!!)
+                    cats.add(categories!!)
                     Log.i("FromFirebaseCat", cats.toString())
                 }
 
@@ -110,16 +117,4 @@ class CategoryFragment : Fragment() {
 
     }
 
-
-=======
-        categoryViewModel =
-            ViewModelProviders.of(this).get(CategoryViewModel::class.java)
-        // TODO: Use the ViewModel
-    }
-
-    private fun setUpCategoryView(view: RecyclerView) =with(view) {
-        layoutManager = GridLayoutManager(context, 2)
-        adapter = CategoryAdapter()
-    }
->>>>>>> fe80b660d89f3caf687ffd640f210a0d202ff3ec
 }
